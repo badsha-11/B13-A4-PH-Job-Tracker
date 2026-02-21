@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <title>Job Application Tracker</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="font-geist">
+
+    <header class="w-10/12 mx-auto mt-11">
+        <h1 class="text-2xl font-bold">Job Application Tracker</h1>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-[20px]">
+            <!-- __1st__ -->
+             <div class=" border-l-4 border-yellow-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-yellow-50">
+                <p class="">Total</p>
+                <p id="total" class="text-2xl font-bold">0</p>
+             </div>
+            <!-- __2nd__ -->
+             <div class=" border-l-4 border-green-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-green-50">
+                <p class="">Interview</p>
+                <p id="Interview" class="text-2xl font-bold text-green-500">0</p>
+             </div>
+            <!-- __3rd__ -->
+             <div class=" border-l-4 border-red-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-red-50">
+                <p class="">Rejected</p>
+                <p id="Rejected" class="text-2xl font-bold text-red-500">0</p>
+             </div>
+        </div>
+        <hr class="text-gray-300/50 my-8">
+    </header>
+
+    <!-- button section -->
+    <section class="w-10/12 mx-auto">
+        <div class="flex justify-between">
+            <h2 class="font-semibold text-xl">Available Jobs</h2>
+            <div class="flex gap-1 text-neutral-500/50 font-medium">
+                <p>0</p>
+                <p id="total-2">jobs</p>
+            </div>
+        </div>
+    </section>
+
+    
+</body>
+</html>
