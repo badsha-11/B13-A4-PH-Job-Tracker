@@ -1,49 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
     <title>Job Application Tracker</title>
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body class="font-geist">
-
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="font-geist bg-[#f8fafc]">
     <header class="w-10/12 mx-auto mt-11">
-        <h1 class="text-2xl font-bold">Job Application Tracker</h1>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-[20px]">
-            <!-- __1st__ -->
-             <div class=" border-l-4 border-yellow-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-yellow-50">
-                <p class="">Total</p>
-                <p id="total" class="text-2xl font-bold">0</p>
-             </div>
-            <!-- __2nd__ -->
-             <div class=" border-l-4 border-green-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-green-50">
-                <p class="">Interview</p>
-                <p id="Interview" class="text-2xl font-bold text-green-500">0</p>
-             </div>
-            <!-- __3rd__ -->
-             <div class=" border-l-4 border-red-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-red-50">
-                <p class="">Rejected</p>
-                <p id="Rejected" class="text-2xl font-bold text-red-500">0</p>
-             </div>
+      <h1 class="text-2xl font-bold">Job Application Tracker</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-[20px]">
+        <div
+          class="border-l-4 border-yellow-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-yellow-50"
+        >
+          <p>Total</p>
+          <p id="total" class="text-2xl font-bold">0</p>
         </div>
-        <hr class="text-gray-300/50 my-8">
+        <div
+          class="border-l-4 border-green-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-green-50"
+        >
+          <p>Interview</p>
+          <p id="interview" class="text-2xl font-bold text-green-500">0</p>
+        </div>
+        <div
+          class="border-l-4 border-red-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-red-50"
+        >
+          <p>Rejected</p>
+          <p id="rejected" class="text-2xl font-bold text-red-500">0</p>
+        </div>
+      </div>
+      <hr class="text-gray-300/50 my-8" />
     </header>
 
-    <!-- button section -->
-    <section class="w-10/12 mx-auto">
-        <div class="flex justify-between">
-            <h2 class="font-semibold text-xl">Available Jobs</h2>
-            <div class="flex gap-1 text-neutral-500/50 font-medium">
-                <p>0</p>
-                <p id="total-2">jobs</p>
-            </div>
+    <main class="w-10/12 mx-auto">
+      <div class="flex justify-between mb-6">
+        <h2 class="font-semibold text-xl">Available Jobs</h2>
+        <div class="flex gap-1 text-neutral-500/50 font-medium">
+          <p id="total-2">0</p>
+          <p>jobs</p>
         </div>
+      </div>
+
+      <div class="flex gap-2">
+        <button
+          onclick="togglestyle('all-tracker-btn')"
+          class="bg-[#3b82f6] text-white shadow px-[32px] py-[10px] rounded-md"
+          id="all-tracker-btn"
+        >
+          All
+        </button>
+        <button
+          onclick="togglestyle('interview-tracker-btn')"
+          class="bg-[#ffffff] shadow px-[32px] py-[10px] rounded-md"
+          id="interview-tracker-btn"
+        >
+          Interview
+        </button>
+        <button
+          onclick="togglestyle('rejected-tracker-btn')"
+          class="bg-[#ffffff] shadow px-[32px] py-[10px] rounded-md"
+          id="rejected-tracker-btn"
+        >
+          Rejected
+        </button>
+      </div>
+
+      <section id="all-cards" class="mt-4 space-y-6">
+        <div
+          class="card border-l-4 border-yellow-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-yellow-50"
+        >
+          <div class="flex justify-between">
+            <h2 class="mobile-first-corp font-semibold text-xl">
+              Mobile First Corp
+            </h2>
+            <span
+              class="p-1 border rounded-full border-neutral-400/50 text-neutral-400/50 w-8 hover:bg-red-500 hover:text-white cursor-pointer"
+              ><i class="fa-regular fa-trash-can"></i
+            ></span>
+          </div>
+          <p class="job-titel text-gray-400">React Native Developer</p>
+          <p class="job-info text-gray-400 my-4">
+            Remote • Full-time • $130,000 - $175,000
+          </p>
+          <div>
+            <p
+              class="stetas py-1 px-2 rounded text-black bg-gray-200 inline-flex"
+            >
+              Not Applied
+            </p>
+          </div>
+          <p class="mt-1 mb-4 text-[#323b49]">
+            Build cross-platform mobile applications using React Native.
+          </p>
+          <div class="flex gap-2">
+            <button
+              class="px-3 py-1 border font-semibold border-green-500 rounded-md text-green-500 interview-btn"
+            >
+              Interview
+            </button>
+            <button
+              class="px-3 py-1 border font-semibold border-red-500 rounded-md text-red-500 rejected-btn"
+            >
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="card border-l-4 border-yellow-500 shadow p-[20px] rounded-xl transition-all duration-300 hover:border-l-8 hover:bg-yellow-50"
+        >
+          <div class="flex justify-between">
+            <h2 class="mobile-first-corp font-semibold text-xl">
+              Tech Solutions Ltd
+            </h2>
+            <span
+              class="p-1 border rounded-full border-neutral-400/50 text-neutral-400/50 w-8 hover:bg-red-500 hover:text-white cursor-pointer"
+              ><i class="fa-regular fa-trash-can"></i
+            ></span>
+          </div>
+          <p class="job-titel text-gray-400">Frontend Engineer</p>
+          <p class="job-info text-gray-400 my-4">
+            Hybrid • Full-time • $90,000 - $120,000
+          </p>
+          <div>
+            <p
+              class="stetas py-1 px-2 rounded text-black bg-gray-200 inline-flex"
+            >
+              Not Applied
+            </p>
+          </div>
+          <p class="mt-1 mb-4 text-[#323b49]">
+            Exciting opportunity for frontend experts.
+          </p>
+          <div class="flex gap-2">
+            <button
+              class="px-3 py-1 border font-semibold border-green-500 rounded-md text-green-500 interview-btn"
+            >
+              Interview
+            </button>
+            <button
+              class="px-3 py-1 border font-semibold border-red-500 rounded-md text-red-500 rejected-btn"
+            >
+              Rejected
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="filterd-section mt-4 space-y-6 hidden"></section>
+    </main>
+
+    <section class="filterd-section mt-4 space-y-6 hidden">
+      <div
+        id="empty-state"
+        class="flex flex-col items-center justify-center py-20"
+      >
+        <img src="./jobs.png" alt="No jobs" class="w-24 mb-4 opacity-50" />
+        <h3 class="text-xl font-bold text-[#003057]">No jobs available</h3>
+        <p class="text-gray-500">Check back soon for new job opportunities</p>
+      </div>
     </section>
 
-    
-</body>
+    <script src="./js/machine.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
 </html>
